@@ -9,13 +9,13 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 ### Java template
-*.class
+# *.class
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
 # Package Files #
-*.jar
+# *.jar
 *.war
 *.ear
 
