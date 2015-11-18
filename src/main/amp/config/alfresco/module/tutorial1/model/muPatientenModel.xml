@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Definition des Patientenmodells -->
+<model name="mu:patientenmodel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+    <description>Patienten Stammblatt Model</description>
+    <author>Marbach - Suarez</author>
+    <version>0.9</version>
+
+    <!-- Imports are required to allow references to definitions in other models -->
+    <imports>
+        <!-- Import Alfresco Dictionary Definitions -->
+        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d" />
+        <!-- Import Alfresco Content Domain Model Definitions -->
+        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm" />
+    </imports>
+
+    <namespaces>
+        <namespace uri="http://www.someco.com/model/content/1.0" prefix="mu" />
+    </namespaces>
+
+    <!-- Hier kommen die Contraints hinein, diese werden weiter unten referenziert-->
+    <constraints>
+        <constraint name="mu:svnrRegex" type="REGEX">
+            <parameter name="expression">
+                <value>[0-9]*</value>
+            </parameter>
+            <parameter name="requiresMatch">
+                <value>true</value>
+            </parameter>
+        </constraint>
+        <constraint name="mu:svnrMinMax" type="LENGTH">
+            <parameter name="minLength">
+                <value>4</value>
+            </parameter>
+            <parameter name="maxLength">
+                <value>4</value>
+            </parameter>
+        </constraint>
+        <constraint name="mu:geschlecht" type="LIST">
+            <parameter name="allowedValues">
+                <list>
+                    <value>Maennlich</value>
+                    <value>Weiblich</value>
+                </list>
+            </parameter>
+        </constraint>
+        <constraint name="mu:blutgruppe" type="LIST">
+            <parameter name="allowedValues">
+                <list>
+                    <value>0</value>
+                    <value>A</value>
+                    <value>B</value>
+                    <value>AB</value>
+                </list>
+            </parameter>
+        </constraint>
+        <constraint name="mu:rhesusfaktor" type="LIST">
+            <parameter name="allowedValues">
+                <list>
+                    <value>negativ</value>
+                    <value>positiv</value>
+                </list>
+            </parameter>
+        </constraint>
+        <constraint name="mu:versicherung" type="LIST">
+            <parameter name="allowedValues">
+                <list>
+                    <value>WGKK</value>
+                    <value>PVA</value>
+                    <value>BVA</value>
+                    <value>SVA</value>
+                </list>
+            </parameter>
+        </constraint>
+    </constraints>
+
+    <types>
+
+        <type name="mu:aerzteregisterkarte">
+            <title>Aerzteregisterkarte</title>
+            <parent>cm:content</parent>
+            <properties>
+                <property name="mu:arztVName">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <property name="mu:arztFachbereich">
+                    <type>d:text</type>
+                    <multiple>true</multiple>
+                </property>
+            </properties>
+        </type>
+
+        <type name="mu:patientenStammblatt">
+            <title>Patienten Stammblatt</title>
+            <parent>cm:content</parent>
+            <properties>
+                <property name="mu:patientenGebDat">
+                    <type>d:date</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <property name="mu:patientenSVNR">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                    <constraints>
+                        <constraint ref="mu:svnrMinMax"></constraint>
+                        <constraint ref="mu:svnrRegex"></constraint>
+                    </constraints>
+                </property>
+                <property name="mu:patientenVersicherung">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <property name="mu:patientenVName">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <property name="mu:patientenMName">
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <multiple>true</multiple>
+                </property>
+                <property name="mu:patientenNName">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <property name="mu:patientenStrasse">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <property name="mu:patientenPLZ">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                    <constraints>
+                        <constraint ref="mu:svnrRegex"></constraint>
+                        <constraint ref="mu:svnrMinMax"></constraint>
+                    </constraints>
+                </property>
+                <property name="mu:patientenGeschlecht">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                    <constraints>
+                        <constraint ref="mu:geschlecht"></constraint>
+                    </constraints>
+                </property>
+                <property name="mu:patientenBlutgruppe">
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <constraints>
+                        <constraint ref="mu:blutgruppe"></constraint>
+                    </constraints>
+                </property>
+                <property name="mu:patientenRhesusfaktor">
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <constraints>
+                        <constraint ref="mu:rhesusfaktor"></constraint>
+                    </constraints>
+                </property>
+                <property name="mu:patientenAnmerkungen">
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                </property>
+            </properties>
+        </type>
+
+
+    </types>
+
+</model>
