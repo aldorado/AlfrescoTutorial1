@@ -40,6 +40,7 @@
             </list>
         </property>
     </bean>
+
     <bean id="${project.artifactId}_patiententdictionaryBootstrap" parent="dictionaryModelBootstrap" depends-on="dictionaryBootstrap">
         <property name="models">
             <list>
