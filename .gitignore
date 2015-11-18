@@ -25,3 +25,5 @@ hs_err_pid*
 # Created by .ignore support plugin (hsz.mobi)
 tutorial1.iml
 /.idea
+/alf_data_dev
+/target
