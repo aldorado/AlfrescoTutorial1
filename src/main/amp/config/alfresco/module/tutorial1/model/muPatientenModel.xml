@@ -18,7 +18,7 @@
         <namespace uri="http://www.someco.com/model/content/1.0" prefix="mu" />
     </namespaces>
 
-    <!-- Hier kommen die Contraints hinein, diese werden weiter unten referenziert-->
+    <!-- Hier kommen die Contraints rein, diese werden weiter unten referenziert-->
     <constraints>
         <constraint name="mu:svnrRegex" type="REGEX">
             <parameter name="expression">
