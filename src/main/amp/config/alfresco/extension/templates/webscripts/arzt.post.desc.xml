@@ -1,0 +1,8 @@
+<webscript>
+    <shortname>arzt test</shortname>
+    <family>Tutorials</family>
+    <description>Creates content of Arzt</description>
+    <url>/api/arzt</url>
+    <format default="json">extension</format>
+    <authentication>user</authentication>
+</webscript>
