@@ -10,7 +10,8 @@ if (aerzte)
         arzt.arztNachname = aerzte[i].properties['mu:arztNachname'];
         arzt.arztFachbereich = aerzte[i].properties['mu:arztFachbereich'];
 
-        output.aerzte.push(arzt);
+        if(arzt.arztVorname && arzt.arztNachname && arzt.arztFachbereich)
+            output.aerzte.push(arzt);
 }
 
 model.output = jsonUtils.toJSONString(output);
