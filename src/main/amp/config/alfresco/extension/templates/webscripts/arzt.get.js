@@ -10,7 +10,7 @@ if (aerzte)
         arzt.arztNachname = aerzte[i].properties['mu:arztNachname'];
         arzt.arztFachbereich = aerzte[i].properties['mu:arztFachbereich'];
 
-        if(arzt.arztVorname && arzt.arztNachname && arzt.arztFachbereich)
+        if(arzt.arztVorname && arzt.arztNachname)
             output.aerzte.push(arzt);
 }
 
