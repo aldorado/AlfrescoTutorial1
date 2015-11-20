@@ -3,7 +3,6 @@ var output = {};
 output.aerzte = new Array();
 if (aerzte)
     for (var i = 0; i < aerzte.length; i++) {
-
         var arzt = {};
 
         arzt.arztVorname = aerzte[i].properties['mu:arztVorname'];
@@ -12,6 +11,6 @@ if (aerzte)
 
         if(arzt.arztVorname && arzt.arztNachname)
             output.aerzte.push(arzt);
-}
+    }
 
 model.output = jsonUtils.toJSONString(output);
