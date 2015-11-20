@@ -80,7 +80,11 @@
             <title>Aerzteregisterkarte</title>
             <parent>cm:content</parent>
             <properties>
-                <property name="mu:arztVName">
+                <property name="mu:arztVorname">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <property name="mu:arztNachname">
                     <type>d:text</type>
                     <mandatory>true</mandatory>
                 </property>
