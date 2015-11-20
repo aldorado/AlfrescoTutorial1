@@ -1,5 +1,5 @@
 <webscript>
-    <shortname>arzt test</shortname>
+    <shortname>Post Arzt</shortname>
     <family>Tutorials</family>
     <description>Creates content of Arzt</description>
     <url>/api/arzt</url>

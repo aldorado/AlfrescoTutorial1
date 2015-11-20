@@ -1,18 +1,16 @@
-var contentType = "mu:aerzteregisterkarte";
-var documentName = url.templateArgs.documentName;
+var aerzte = search.luceneSearch("TYPE:\"mu:aerzteregisterkarte\"");
+var output = {};
+output.aerzte = new Array();
+if (aerzte)
+    for (var i = 0; i < aerzte.length; i++) {
 
-var properties = [];
+        var arzt = {};
 
-properties['mu:arztVorname'] = 'Franz';
-properties['mu:arztNachname'] = 'Gott';
-properties['mu:arztFachbereich'] = ['Affe', 'Hase'];
+        arzt.arztVorname = aerzte[i].properties['mu:arztVorname'];
+        arzt.arztNachname = aerzte[i].properties['mu:arztNachname'];
+        arzt.arztFachbereich = aerzte[i].properties['mu:arztFachbereich'];
 
-var document = companyhome.createNode(documentName, contentType, properties);
-
-if (document != null){
-    model.document = document;
-    model.msg = "Created OK!";
+        output.aerzte.push(arzt);
 }
-else {
-    model.msg = "Failed to create document!";
-}
+
+model.output = jsonUtils.toJSONString(output);

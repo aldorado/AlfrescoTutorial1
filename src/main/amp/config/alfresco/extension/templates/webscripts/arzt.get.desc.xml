@@ -1,8 +1,8 @@
 <webscript>
-    <shortname>Model test</shortname>
+    <shortname>Get arzt</shortname>
     <family>Tutorials</family>
-    <description>Creates content of a custom type</description>
-    <url>/arzt/{documentName}</url>
-    <format default="html">extension</format>
+    <description>Get Arzt</description>
+    <url>/api/arzt</url>
+    <format default="json">extension</format>
     <authentication>user</authentication>
 </webscript>
