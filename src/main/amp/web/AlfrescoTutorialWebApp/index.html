@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="alfrescoApp">
+
+<link rel="stylesheet" href="css/style.css" >
+
+<!-- Bootstrap and FontAwesome CSS CDN -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" >
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<!-- AngularJS from Google CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-resource.min.js"></script>
+
+<body ng-controller="mainCtrl as mc">
+
+<header>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Alfresco Tutorial WebApp</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="newdoctor"><i class="fa fa-user-md"></i> Arzt Anlegen</a></li>
+        <li><a href="doctorlist"><i class="fa fa-hospital-o"></i> Aerzte Liste</a></li>
+        <li><a href="newpatient"><i class="fa fa-male"></i> Patient Anlegen</a></li>
+        <li><a href="patientlist"><i class="fa fa-group"></i> Patienten Liste</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<div ng-view></div>
+
+<!-- Alfresco Web App -->
+<script src = "js/alfrescoApp.js"></script>
+<script src="js/docModule.js"></script>
+<script src="js/patientModule.js"></script>
+<script src="js/serviceModule.js"></script>
+
+</body>
+</html>

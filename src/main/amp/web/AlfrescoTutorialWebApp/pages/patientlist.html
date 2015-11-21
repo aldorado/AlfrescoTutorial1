@@ -1,0 +1,42 @@
+<div class="container">
+	<h2>Patienten</h2>
+	<div class="row content-secondary">
+		<div class="col-sm-2">
+			<label class="control-label align-right">SVNR-Suche</label>
+			<input type="text" class="form-control" ng-model="svnrFilter">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-12">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Vorname</th>
+						<th>Nachname</th>
+						<th>Strasse</th>
+						<th>PLZ</th>
+						<th>Ort</th>
+						<th>Versicherung</th>
+						<th>Blutgruppe</th>
+						<th>Rhesusfaktor</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr ng-repeat="patient in plc.patientList | filter: {svnr : svnrFilter}">
+						<td ng-bind="patient.vorname"></td>
+						<td ng-bind="patient.nachname"></td>
+						<td ng-bind="patient.strasse"></td>
+						<td ng-bind="patient.plz"></td>
+						<td ng-bind="patient.ort"></td>
+						<td ng-bind="patient.versicherung"></td>
+						<td ng-bind="patient.blutgruppe"></td>
+						<td ng-bind="patient.rhesusfaktor"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+</div>

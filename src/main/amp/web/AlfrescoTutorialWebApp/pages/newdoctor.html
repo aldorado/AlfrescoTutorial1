@@ -1,0 +1,22 @@
+<div class="container">
+	<h2>Neuer Arzt</h2>
+	<form class="form-vertical" ng-submit="ndc.submitNewDoctor()">
+		<div class="form-group">
+			<label class="control-label">Vorname</label>
+			<input class="form-control" type="text" ng-model="ndc.arzt.vorname" required>
+		</div>
+		<div class="form-group">
+			<label class="control-label">Nachname</label>
+			<input class="form-control" type="text" ng-model="ndc.arzt.nachname" required>
+		</div>
+		<div class="form-group">
+			<label class="control-label">Fachbereiche</label>
+			<input class="form-control" type="text" ng-repeat="fachbereich in ndc.arzt.fachbereich track by $index" ng-model="ndc.arzt.fachbereich[$index]" placeholder="Fachbereich" required>
+			<i class="fa fa-plus" ng-click="ndc.addFachbereich()"></i>
+			<i class="fa fa-minus" ng-show="ndc.arztFachbereich.length" ng-click="ndc.removeFachbereich()"></i>
+		</div>
+		<br />
+		<button class="btn btn-success" type="submit"><i class="fa fa-stethoscope"> </i> Arzt Anlegen</button>
+	</form>
+	<div ng-bind="ndc.output"></div>
+</div>

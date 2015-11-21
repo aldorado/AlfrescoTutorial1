@@ -1,0 +1,26 @@
+<div class="container">
+	<h2>Ärzte</h2>
+
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<td>Vorname</td>
+				<td>Nachname</td>
+				<td>Fachbereich</td>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr ng-repeat="doc in dlc.docList">
+				<td ng-bind="doc.arztVorname"></td>
+				<td ng-bind="doc.arztNachname"></td>
+				<td>
+					<ul class="fachbereichListe">
+						<li ng-repeat="fachbereich in doc.arztFachbereich" ng-bind="fachbereich"></li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+
+	</table>
+</div>
