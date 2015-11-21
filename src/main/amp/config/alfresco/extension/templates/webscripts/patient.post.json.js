@@ -4,6 +4,8 @@
 
 //var patienten = search.luceneSearch("TYPE:\"mu:patientenStammblatt\"");
 
+var id = url.templateArgs.id;
+
 var contentType = "mu:patientenStammblatt";
 
 var properties = [];
@@ -15,7 +17,7 @@ var status = {
 if(json.has("patientenVorname"))
     status.status = "vorname";
 
-if (json.has("patientenVorname") && json.has("patientenNachname") && json.has("patientenGebDat") && json.has("patientenSVNR") && json.has("patientenVersicherung") && json.has("patientenStrasse") && json.has("patientenPLZ") && json.has("patientenGeschlecht")) {
+if (json.has("patientenVorname") && json.has("patientenNachname") && json.has("patientenGebDat") && json.has("patientenSVNR") && json.has("patientenVersicherung") && json.has("patientenStrasse") && json.has("patientenPLZ") && json.has("patientenOrt") && json.has("patientenGeschlecht")) {
 
     //müssen gesetzt werden
     properties['mu:patientenGebDat'] = json.get("patientenGebDat");
@@ -25,6 +27,7 @@ if (json.has("patientenVorname") && json.has("patientenNachname") && json.has("p
     properties['mu:patientenNachname'] = json.get("patientenNachname");
     properties['mu:patientenStrasse'] = json.get("patientenStrasse");
     properties['mu:patientenPLZ'] = json.get("patientenPLZ");
+    properties['mu:patientenOrt'] = json.get("patientenOrt");
     properties['mu:patientenGeschlecht'] = json.get("patientenGeschlecht");
 
 
@@ -49,35 +52,3 @@ if (json.has("patientenVorname") && json.has("patientenNachname") && json.has("p
 }
 
 model.status = jsonUtils.toJSONString(status);
-
-
-/*var contentType = "mu:patientenStammblatt";
-var documentName = url.templateArgs.documentName;
-
-var properties = [];
-
-/*properties['mu:patientenGebDat'] = 'Franz';
- properties['mu:patientenSVNR'] = 'Gott';
- properties['mu:patientenVersicherung'] = 'Hase';
- properties['mu:patientenVName'] = 'Gott';
- properties['mu:patientenMName'] = 'Gott';
- properties['mu:patientenNName'] = 'Gott';
- properties['mu:patientenStrasse'] = 'Gott';
- properties['mu:patientenPLZ'] = 'Gott';
- properties['mu:patientenGeschlecht'] = 'Gott';
-
- properties['mu:patientenBlutgruppe'] = 'Gott';
- properties['mu:patientenRhesusfaktor'] = 'Gott';
- properties['mu:patientenAnmerkungen'] = 'Gott';
-
-var document = companyhome.createNode(documentName, contentType);
-
-if (document != null){
-    model.document = document;
-    model.msg = "Created OK!";
-
-
-}
-else {
-    model.msg = "Failed to create document!";
-}*/

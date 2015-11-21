@@ -11,29 +11,32 @@
 		<div class="col-sm-12">
 			<table class="table table-hover">
 				<thead>
-					<tr>
-						<th>Vorname</th>
-						<th>Nachname</th>
-						<th>Strasse</th>
-						<th>PLZ</th>
-						<th>Ort</th>
-						<th>Versicherung</th>
-						<th>Blutgruppe</th>
-						<th>Rhesusfaktor</th>
-					</tr>
+				<tr>
+					<th>SVNR</th>
+					<th>Vorname</th>
+					<th>Nachname</th>
+					<th>Strasse</th>
+					<th>PLZ</th>
+					<th>Ort</th>
+					<th>Versicherung</th>
+					<th>Blutgruppe</th>
+					<th>Rhesusfaktor</th>
+				</tr>
 				</thead>
 
 				<tbody>
-					<tr ng-repeat="patient in plc.patientList | filter: {svnr : svnrFilter}">
-						<td ng-bind="patient.vorname"></td>
-						<td ng-bind="patient.nachname"></td>
-						<td ng-bind="patient.strasse"></td>
-						<td ng-bind="patient.plz"></td>
-						<td ng-bind="patient.ort"></td>
-						<td ng-bind="patient.versicherung"></td>
-						<td ng-bind="patient.blutgruppe"></td>
-						<td ng-bind="patient.rhesusfaktor"></td>
-					</tr>
+				<tr ng-repeat="patient in plc.patientList | filter: {patientenSVNR : svnrFilter}">
+					<td ng-bind="patient.patientenSVNR"></td>
+					<td ng-bind="patient.patientenVorname"></td>
+					<td ng-bind="patient.patientenNachname"></td>
+					<td ng-bind="patient.patientenStrasse"></td>
+					<td ng-bind="patient.patientenPLZ"></td>
+					<td ng-bind="patient.patientenOrt"></td>
+					<td ng-bind="patient.patientenVersicherung"></td>
+					<td ng-bind="patient.patientenBlutgruppe"></td>
+					<td ng-bind="patient.patientenRhesusfaktor"></td>
+					<td><button ng-click="plc.deletePatient($index)" class="btn btn-danger"><i class="fa fa-remove"> </i></button></td>
+				</tr>
 				</tbody>
 			</table>
 		</div>

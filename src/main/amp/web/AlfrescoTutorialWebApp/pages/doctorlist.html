@@ -19,6 +19,7 @@
 						<li ng-repeat="fachbereich in doc.arztFachbereich" ng-bind="fachbereich"></li>
 					</ul>
 				</td>
+				<td><button class="btn btn-danger" ng-click="dlc.deleteArzt($index)"><i class="fa fa-remove"> </i></button></td>
 			</tr>
 		</tbody>
 

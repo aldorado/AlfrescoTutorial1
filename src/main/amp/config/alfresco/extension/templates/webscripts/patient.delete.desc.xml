@@ -1,9 +1,8 @@
 <webscript>
-    <shortname>Get arzt</shortname>
+    <shortname>Delete Patient</shortname>
     <family>Tutorials</family>
-    <description>Get Arzt</description>
-    <url>/api/arzt</url>
-    <url>/api/arzt/{id}</url>
+    <description>Deletes Patient</description>
+    <url>/api/patient/{id}</url>
     <format default="json">extension</format>
     <authentication>user</authentication>
 </webscript>

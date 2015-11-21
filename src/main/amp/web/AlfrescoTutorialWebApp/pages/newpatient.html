@@ -2,65 +2,65 @@
 	<h2>Neuer Patient</h2>
 	<form class="form-horizontal" ng-submit="npc.submitNewPatient()">
 		<div class="form-group">
-			<label class="col-sm-1 control-label">SVNR</label>
-			<div class="col-sm-2">
-				<input class="form-control" type="text" ng-model="npc.patient.svnr" pattern="[0-9]{4}" maxlength="4" ng-minlenth="4" ng-maxlength="4" required>
+			<label class="col-sm-2 control-label">SVNR</label>
+			<div class="col-sm-4">
+				<input class="form-control" type="text" ng-model="npc.patient.patientenSVNR" pattern="[0-9]{4}" maxlength="4" ng-minlenth="4" ng-maxlength="4" required>
 			</div>
-			<label class="col-sm-1 control-label">Geb.Dat.</label>
-			<div class="col-sm-2">
-				<input class="form-control" type="date" ng-model="npc.patient.gebdat" min="1850-01-01" max="2500-01-01" required>
+			<label class="col-sm-2 control-label">Geb.Dat.</label>
+			<div class="col-sm-4">
+				<input class="form-control" type="date" ng-model="npc.patient.patientenGebDat" min="1850-01-01" max="2500-01-01" required>
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="col-sm-1 control-label">Versicherung</label>
-			<div class="col-sm-2">
-				<select class="form-control" ng-options="v as v for v in npc.versicherungen" ng-model="npc.patient.versicherung" required>
+			<label class="col-sm-2 control-label">Versicherung</label>
+			<div class="col-sm-4">
+				<select class="form-control" ng-options="v as v for v in npc.versicherungen" ng-model="npc.patient.patientenVersicherung" required>
 					<option value="">--Auswählen--</option>
 				</select>
 			</div>
-			<label class="col-sm-1 control-label">Geschlecht</label>
-			<div class="col-sm-2">
-				<select class="form-control" ng-options="g as g for g in npc.geschlechter" ng-model="npc.patient.geschlecht" required>
+			<label class="col-sm-2 control-label">Geschlecht</label>
+			<div class="col-sm-4">
+				<select class="form-control" ng-options="g as g for g in npc.geschlechter" ng-model="npc.patient.patientenGeschlecht" required>
 					<option value="">--Auswählen--</option>
 				</select>
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="col-sm-1 control-label">Vorname</label>
-			<div class="col-sm-2">
-				<input class="form-control" type="text" ng-model="npc.patient.vorname" required>
+			<label class="col-sm-2 control-label">Vorname</label>
+			<div class="col-sm-4">
+				<input class="form-control" type="text" ng-model="npc.patient.patientenVorname" required>
 			</div>
-			<label class="col-sm-1 control-label">Nachname</label>
-			<div class="col-sm-2">
-				<input class="form-control" type="text" ng-model="npc.patient.nachname" required>
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="col-sm-1 control-label">Strasse</label>
-			<div class="col-sm-5">
-				<input class="form-control" type="text" ng-model="npc.patient.strasse" required>
+			<label class="col-sm-2 control-label">Nachname</label>
+			<div class="col-sm-4">
+				<input class="form-control" type="text" ng-model="npc.patient.patientenNachname" required>
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="col-sm-1 control-label">PLZ</label>
-			<div class="col-sm-2">
-				<input class="form-control" type="text" ng-model="npc.patient.plz" pattern="[0-9]{4}" maxlength="4" ng-minlenth="4" ng-maxlength="4" required>
-			</div>
-			<label class="col-sm-1 control-label">Ort</label>
-			<div class="col-sm-2">
-				<input class="form-control" type="text" ng-model="npc.patient.ort" required>
+			<label class="col-sm-2 control-label">Strasse</label>
+			<div class="col-sm-10">
+				<input class="form-control" type="text" ng-model="npc.patient.patientenStrasse" required>
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="col-sm-1 control-label">Blutgruppe</label>
-			<div class="col-sm-2">
-				<select class="form-control" ng-options="v as v for v in npc.blutgruppen" ng-model="npc.patient.blutgruppe">
+			<label class="col-sm-2 control-label">PLZ</label>
+			<div class="col-sm-4">
+				<input class="form-control" type="text" ng-model="npc.patient.patientenPLZ" pattern="[0-9]{4}" maxlength="4" ng-minlenth="4" ng-maxlength="4" required>
+			</div>
+			<label class="col-sm-2 control-label">Ort</label>
+			<div class="col-sm-4">
+				<input class="form-control" type="text" ng-model="npc.patient.patientenOrt" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Blutgruppe</label>
+			<div class="col-sm-4">
+				<select class="form-control" ng-options="v as v for v in npc.blutgruppen" ng-model="npc.patient.patientenBlutgruppe">
 					<option value="">--Auswählen--</option>
 				</select>
 			</div>
-			<label class="col-sm-1 control-label">Rhesusfaktor</label>
-			<div class="col-sm-2">
-				<select class="form-control" ng-options="v as v for v in npc.rhesusfaktoren" ng-model="npc.patient.rhesusfaktor">
+			<label class="col-sm-2 control-label">Rhesusfaktor</label>
+			<div class="col-sm-4">
+				<select class="form-control" ng-options="v as v for v in npc.rhesusfaktoren" ng-model="npc.patient.patientenRhesusfaktor">
 					<option value="">--Auswählen--</option>
 				</select>
 			</div>

@@ -13,6 +13,7 @@ if (patienten)
         patient.patientenGeschlecht = patienten[i].properties['mu:patientenGeschlecht'];
         patient.patientenStrasse = patienten[i].properties['mu:patientenStrasse'];
         patient.patientenPLZ = patienten[i].properties['mu:patientenPLZ'];
+        patient.patientenOrt = patienten[i].properties['mu:patientenOrt'];
         patient.patientenVersicherung = patienten[i].properties['mu:patientenVersicherung'];
         patient.patientenBlutgruppe = patienten[i].properties['mu:patientenBlutgruppe'];
         patient.patientenRhesusfaktor = patienten[i].properties['mu:patientenRhesusfaktor'];

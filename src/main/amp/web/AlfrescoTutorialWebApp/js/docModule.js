@@ -17,10 +17,7 @@ docModule.controller('newDoctorCtrl', function (ArztAPI) {
 	};
 
 	self.submitNewDoctor = function () {
-		//Not yet implemented, just testcontent
-
 		ArztAPI.save(self.arzt);
-
 		self.output = JSON.stringify(self.arzt);
 		console.log(self.output);
 	};
@@ -30,7 +27,10 @@ docModule.controller('newDoctorCtrl', function (ArztAPI) {
 docModule.controller('doctorListCtrl', function (ArztAPI) {
 	var self = this;
 	self.test = "Aerzteliste";
-
 	self.docList = ArztAPI.query();
 
+	self.deleteArzt = function (index) {
+		self.docList[index].$delete();
+		self.docList.splice(index, 1);
+	}
 });

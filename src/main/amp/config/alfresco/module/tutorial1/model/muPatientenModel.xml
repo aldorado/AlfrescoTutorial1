@@ -39,7 +39,7 @@
         <constraint name="mu:geschlecht" type="LIST">
             <parameter name="allowedValues">
                 <list>
-                    <value>Maennlich</value>
+                    <value>Männlich</value>
                     <value>Weiblich</value>
                 </list>
             </parameter>
@@ -129,6 +129,10 @@
                     <mandatory>true</mandatory>
                 </property>
                 <property name="mu:patientenStrasse">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <property name="mu:patientenOrt">
                     <type>d:text</type>
                     <mandatory>true</mandatory>
                 </property>

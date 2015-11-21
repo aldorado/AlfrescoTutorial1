@@ -17,10 +17,5 @@
 	limitations under the License.
 -->
 <beans>
-	<bean id="webscript.helloworld.get"
-		  class="com.meduni.tutorial1.demoamp.HelloWorldWebScript"
-		  parent="webscript">
-	</bean>
-
 
 </beans>
