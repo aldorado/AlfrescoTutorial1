@@ -40,7 +40,7 @@ if (json.has("patientenVname") && json.has("patientenNname") && json.has("patien
         properties['mu:patientenAnmerkungen'] =  json.get("patientenAnmerkungen");
 
 
-    var patient = companyhome.createNode(json.get("patientenVersicherung"), contentType, properties);
+    var patient = companyhome.createNode(json.get("patientenSVNR"), contentType, properties);
 
     if(patient)
         status.status = "ok";
