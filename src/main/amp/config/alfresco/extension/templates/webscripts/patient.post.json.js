@@ -12,22 +12,24 @@ var status = {
     "status":"error"
 };
 
+if(json.has("patientenVorname"))
+    status.status = "vorname";
 
-if (json.has("patientenVname") && json.has("patientenNname") && json.has("patientenGebDat") && json.has("patientenSVNR") && json.has("patientenVersicherung") && json.has("patientenStrasse") && json.has("patientenPLZ") && json.has("patientenGeschlecht")) {
+if (json.has("patientenVorname") && json.has("patientenNachname") && json.has("patientenGebDat") && json.has("patientenSVNR") && json.has("patientenVersicherung") && json.has("patientenStrasse") && json.has("patientenPLZ") && json.has("patientenGeschlecht")) {
 
     //müssen gesetzt werden
     properties['mu:patientenGebDat'] = json.get("patientenGebDat");
     properties['mu:patientenSVNR'] = json.get("patientenSVNR");
     properties['mu:patientenVersicherung'] = json.get("patientenVersicherung");
-    properties['mu:patientenVName'] = json.get("patientenVname");
-    properties['mu:patientenNName'] = json.get("patientenNname");
+    properties['mu:patientenVorname'] = json.get("patientenVorname");
+    properties['mu:patientenNachname'] = json.get("patientenNachname");
     properties['mu:patientenStrasse'] = json.get("patientenStrasse");
     properties['mu:patientenPLZ'] = json.get("patientenPLZ");
     properties['mu:patientenGeschlecht'] = json.get("patientenGeschlecht");
 
 
     //optionale Felder
-    if (json.has("patientenMName"))
+    if (json.has("patientenMittelname"))
         properties['mu:patientenMName'] =  json.get("patientenMName");
 
     if (json.has("patientenBlutgruppe"))

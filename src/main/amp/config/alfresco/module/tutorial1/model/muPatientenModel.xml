@@ -115,16 +115,16 @@
                     <type>d:text</type>
                     <mandatory>true</mandatory>
                 </property>
-                <property name="mu:patientenVName">
+                <property name="mu:patientenVorname">
                     <type>d:text</type>
                     <mandatory>true</mandatory>
                 </property>
-                <property name="mu:patientenMName">
+                <property name="mu:patientenMittelname">
                     <type>d:text</type>
                     <mandatory>false</mandatory>
                     <multiple>true</multiple>
                 </property>
-                <property name="mu:patientenNName">
+                <property name="mu:patientenNachname">
                     <type>d:text</type>
                     <mandatory>true</mandatory>
                 </property>
