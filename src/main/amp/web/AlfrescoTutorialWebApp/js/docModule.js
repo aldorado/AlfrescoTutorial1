@@ -1,23 +1,25 @@
 var docModule = angular.module('docModule', []);
 
-docModule.controller('newDoctorCtrl', function () {
+docModule.controller('newDoctorCtrl', function (ArztAPI) {
 	var self = this;
 	self.arzt = {};
 
-	self.arzt.vorname = "";
-	self.arzt.nachname = "",
-	self.arzt.fachbereich = [""];
+	self.arzt.arztVorname = "";
+	self.arzt.arztNachname = "",
+	self.arzt.arztFachbereich = [""];
 
 	self.addFachbereich = function () {
-		self.arzt.fachbereich.push('');	
+		self.arzt.arztFachbereich.push('');
 	};
 
 	self.removeFachbereich = function () {
-		self.arzt.fachbereich.pop();
+		self.arzt.arztFachbereich.pop();
 	};
 
 	self.submitNewDoctor = function () {
 		//Not yet implemented, just testcontent
+
+		ArztAPI.save(self.arzt);
 
 		self.output = JSON.stringify(self.arzt);
 		console.log(self.output);
