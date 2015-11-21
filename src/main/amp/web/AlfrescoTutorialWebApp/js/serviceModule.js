@@ -1,10 +1,10 @@
 var serviceModule = angular.module('serviceModule', []);
 
 serviceModule.factory('PatientAPI', function ($resource) {
-	return $resource('/alfresco/patient/:id');
+	return $resource('/alfresco/service/api/patient');
 });
 
 
 serviceModule.factory('ArztAPI', function ($resource) {
-	return $resource('http://localhost:8080/alfresco/service/api/arzt');
+	return $resource('/alfresco/service/api/arzt');
 });

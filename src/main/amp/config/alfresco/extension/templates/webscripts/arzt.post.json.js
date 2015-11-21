@@ -15,7 +15,7 @@ if (json.has("arztVorname") && json.has("arztNachname")) {
     properties['mu:arztNachname'] = json.get("arztNachname");
 
     if (json.has("arztFachbereich"))
-        properties['mu:arztFachbereich'] =  json.get("arztFachbereich");
+        properties['mu:arztFachbereich'] =  JSON.parse(json.getJSONArray("arztFachbereich"));
 
     var arzt = companyhome.createNode(aerzte.length, contentType, properties);
 

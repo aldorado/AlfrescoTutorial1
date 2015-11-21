@@ -1,6 +1,6 @@
-var patientModule = angular.module('patientModule', ['serviceModule']);
+var patientModule = angular.module('patientModule', []);
 
-patientModule.controller('newPatientCtrl', function () {
+patientModule.controller('newPatientCtrl', function (PatientAPI) {
 	var self = this;
 	self.versicherungen = ['WGKK','BVA','PVA','SVA'];
 	self.geschlechter = ['Männlich','Weiblich'];
@@ -10,6 +10,9 @@ patientModule.controller('newPatientCtrl', function () {
 	self.patient = {};
 
 	self.submitNewPatient = function () {
+
+		PatientAPI.save(self.patient);
+
 		self.output = JSON.stringify(self.patient);
 		console.log(JSON.stringify(self.patient));
 	};
