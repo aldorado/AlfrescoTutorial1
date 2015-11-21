@@ -12,8 +12,6 @@ var status = {
     "status":"error"
 };
 
-if(json.has("patientenStrasse"))
-    status.status = "str";
 
 if (json.has("patientenVname") && json.has("patientenNname") && json.has("patientenGebDat") && json.has("patientenSVNR") && json.has("patientenVersicherung") && json.has("patientenStrasse") && json.has("patientenPLZ") && json.has("patientenGeschlecht")) {
 
