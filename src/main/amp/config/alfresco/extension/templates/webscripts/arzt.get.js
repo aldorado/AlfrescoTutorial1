@@ -1,6 +1,6 @@
 var aerzte = search.luceneSearch("TYPE:\"mu:aerzteregisterkarte\"");
-var output = {};
-output.aerzte = new Array();
+var output = new Array();
+
 if (aerzte)
     for (var i = 0; i < aerzte.length; i++) {
         var arzt = {};
@@ -11,7 +11,7 @@ if (aerzte)
         arzt.arztFachbereich = aerzte[i].properties['mu:arztFachbereich'];
 
         if(arzt.arztVorname && arzt.arztNachname)
-            output.aerzte.push(arzt);
+            output.push(arzt);
     }
 
 model.output = jsonUtils.toJSONString(output);
