@@ -1,0 +1,8 @@
+<webscript>
+    <shortname>Model test</shortname>
+    <family>Tutorials</family>
+    <description>Creates content of a custom type</description>
+    <url>/patient/{documentName}</url>
+    <format default="html">extension</format>
+    <authentication>user</authentication>
+</webscript>

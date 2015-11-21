@@ -32,7 +32,7 @@
         <property name="nodeLocatorService" ref="nodeLocatorService" />
     </bean>
 
-    <!-- Registration of new models -->
+    <!-- Registration of new models-->
 
     <bean id="${project.artifactId}_patiententdictionaryBootstrap" parent="dictionaryModelBootstrap" depends-on="dictionaryBootstrap">
         <property name="models">
