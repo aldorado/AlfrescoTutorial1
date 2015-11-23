@@ -23,4 +23,5 @@ if (json.has("arztVorname") && json.has("arztNachname")) {
         status.status = "ok";
 }
 
+
 model.status = jsonUtils.toJSONString(status);
