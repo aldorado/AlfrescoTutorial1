@@ -172,43 +172,6 @@
             </properties>
         </type>
 
-        <type name="mu:opBericht">
-            <title>OP Bericht</title>
-            <parent>cm:content</parent>
-
-            <properties>
-                <property name="mu:opDatum">
-                    <type>d:date</type>
-                    <mandatory>true</mandatory>
-                </property>
-                <property name="mu:patientenAnmerkungen">
-                    <type>d:text</type>
-                    <mandatory>false</mandatory>
-                </property>
-            </properties>
-
-            <associations>
-                <association name="sc:Aerzte">
-                    <title>operierende Ärzte</title>
-                    <target>
-                        <class>mu:aerzteregisterkarte</class>
-                        <mandatory>true</mandatory>
-                        <many>true</many>
-                    </target>
-                </association>
-
-                <association name="sc:Patient">
-                    <title>Patient</title>
-                    <target>
-                        <class>mu:patientenStammblatt</class>
-                        <mandatory>true</mandatory>
-                        <many>false</many>
-                    </target>
-                </association>
-            </associations>
-
-        </type>
-
 
     </types>
 
