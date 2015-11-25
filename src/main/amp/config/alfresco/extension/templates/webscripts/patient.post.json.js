@@ -1,3 +1,7 @@
+/**
+ * Created by Marbach on 20.11.2015.
+ */
+
 //var patienten = search.luceneSearch("TYPE:\"mu:patientenStammblatt\"");
 
 var id = url.templateArgs.id;

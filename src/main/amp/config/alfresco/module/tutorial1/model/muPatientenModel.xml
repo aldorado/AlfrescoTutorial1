@@ -181,19 +181,15 @@
                     <type>d:date</type>
                     <mandatory>true</mandatory>
                 </property>
-                <property name="mu:opAnmerkungen">
+                <property name="mu:patientenAnmerkungen">
                     <type>d:text</type>
                     <mandatory>false</mandatory>
                 </property>
             </properties>
 
             <associations>
-                <association name="mu:Aerzte">
+                <association name="sc:Aerzte">
                     <title>operierende Ärzte</title>
-                    <source>
-                        <mandatory>true</mandatory>
-                        <many>true</many>
-                    </source>
                     <target>
                         <class>mu:aerzteregisterkarte</class>
                         <mandatory>true</mandatory>
@@ -201,12 +197,8 @@
                     </target>
                 </association>
 
-                <association name="mu:Patient">
+                <association name="sc:Patient">
                     <title>Patient</title>
-                    <source>
-                        <mandatory>true</mandatory>
-                        <many>true</many>
-                    </source>
                     <target>
                         <class>mu:patientenStammblatt</class>
                         <mandatory>true</mandatory>
