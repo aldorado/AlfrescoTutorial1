@@ -2,7 +2,7 @@
     <shortname>Post Patient</shortname>
     <family>Tutorials</family>
     <description>Creates content of Patient</description>
-    <url>/api/patient/{id}</url>
+    <url>/api/patient</url>
     <format default="json">extension</format>
     <authentication>user</authentication>
 </webscript>
