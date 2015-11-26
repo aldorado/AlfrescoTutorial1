@@ -19,7 +19,7 @@ for(bericht in opBerichte){
     var opBericht = {};
     opBericht.id = opBerichte[bericht].name;
     opBericht.opDatum = opBerichte[bericht].properties["mu:opDatum"];
-    opBericht.Anmerkung = opBerichte[bericht].properties["mu:anmerkung"];
+   // opBericht.Anmerkung = opBerichte[bericht].properties["mu:anmerkung"];
 
     //patient
     var patient = {};
@@ -62,8 +62,24 @@ for(bericht in opBerichte){
             aerzte.push(arzt);
     }
 
+    //anhaenge
+    var anhaenge = new Array();
+
+    var findAnhaenge = opBerichte[bericht].assocs["mu:Anhang"];
+    for(var j = 0; j < findAnhaenge.length; j++){
+        var anhang = {};
+
+        anhang.ArbeitsschrittAnmerkung = findAnhaenge[j].properties["mu:ArbeitsschrittAnmerkung"];
+        if(findAnhaenge[j].assocs["mu:ArbeitsschrittAnhang"]){
+            anhang.url = findAnhaenge[j].assocs["mu:ArbeitsschrittAnhang"][0].url;
+        }
+        anhaenge.push(anhang);
+       // anhaenge.push(findAnhaenge[j].properties);
+    }
+
     opBericht.Patient = patient;
     opBericht.Aerzte = aerzte;
+    opBericht.Anhang = anhaenge;
 
     output.push(opBericht);
 }

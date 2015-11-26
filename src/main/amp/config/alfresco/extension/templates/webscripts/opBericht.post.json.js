@@ -53,7 +53,33 @@ if (json.has("patientenSVNR") && json.has("Aerzte") && json.has("opDatum")) {
         opBericht.createAssociation(arzt, "mu:Aerzte");
     }
 
-    //optionale anhaenge
+
+     //optionale anhaenge
+     if(json.has("Anhang")){
+        var anhaenge = JSON.parse(json.getJSONArray("Anhang"));
+        for(anhang in anhaenge){
+            // anmProperties = [];
+            if(anhaenge[anhang].hasOwnProperty("ArbeitsschrittAnmerkung")){
+                var anmProperties = [];
+                anmProperties["mu:ArbeitsschrittAnmerkung"] = anhaenge[anhang].ArbeitsschrittAnmerkung;
+
+            }
+            if(anhaenge[anhang].hasOwnProperty("ArbeitsschrittAnhang")){
+                //Bild assozieren
+                var img = search.findNode(anhaenge[anhang].ArbeitsschrittAnhang);
+            }
+            if(anmProperties){
+                var arbeitsschritt = companyhome.createNode(opBericht.name + "_Schrittnummer_" + anhang,"mu:Arbeitsschritt",anmProperties);
+            }else{
+                var arbeitsschritt = companyhome.createNode(opBericht.name + "_Schrittnummer_" + anhang,"mu:Arbeitsschritt");
+            }
+            if(img){
+                arbeitsschritt.createAssociation(img,"sys:base");
+            }
+            opBericht.createAssociation(arbeitsschritt,"mu:Anhang");
+        }
+     }
+
 
 
 
