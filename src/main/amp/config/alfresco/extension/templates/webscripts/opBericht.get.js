@@ -70,8 +70,9 @@ for(bericht in opBerichte){
         var anhang = {};
 
         anhang.ArbeitsschrittAnmerkung = findAnhaenge[j].properties["mu:ArbeitsschrittAnmerkung"];
-        if(findAnhaenge[j].assocs["mu:ArbeitsschrittAnhang"]){
-            anhang.url = findAnhaenge[j].assocs["mu:ArbeitsschrittAnhang"][0].url;
+        //if(findAnhaenge[j].assocs["mu:ArbeitsschrittAnhang"]){
+        if(findAnhaenge[j].content != ""){
+            anhang.url = findAnhaenge[j].webdavUrl;
         }
         anhaenge.push(anhang);
        // anhaenge.push(findAnhaenge[j].properties);

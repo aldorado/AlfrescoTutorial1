@@ -59,23 +59,36 @@ if (json.has("patientenSVNR") && json.has("Aerzte") && json.has("opDatum")) {
         var anhaenge = JSON.parse(json.getJSONArray("Anhang"));
         for(anhang in anhaenge){
             // anmProperties = [];
-            if(anhaenge[anhang].hasOwnProperty("ArbeitsschrittAnmerkung")){
+
+           /* if(anhaenge[anhang].hasOwnProperty("ArbeitsschrittAnmerkung")){
                 var anmProperties = [];
                 anmProperties["mu:ArbeitsschrittAnmerkung"] = anhaenge[anhang].ArbeitsschrittAnmerkung;
-
-            }
+            }*/
+            var arbeitsschritt;
             if(anhaenge[anhang].hasOwnProperty("ArbeitsschrittAnhang")){
                 //Bild assozieren
-                var img = search.findNode(anhaenge[anhang].ArbeitsschrittAnhang);
+                arbeitsschritt = search.findNode(anhaenge[anhang].ArbeitsschrittAnhang);
+
+            }else{
+                arbeitsschritt = companyhome.createNode(opBericht.name + "_Schrittnummer_" + anhang,"mu:Arbeitsschritt");
             }
-            if(anmProperties){
+
+            if(anhaenge[anhang].hasOwnProperty("ArbeitsschrittAnmerkung")){
+                status.ausgabe = anhaenge[anhang].ArbeitsschrittAnmerkung;
+                arbeitsschritt.properties["mu:ArbeitsschrittAnmerkung"] = anhaenge[anhang].ArbeitsschrittAnmerkung;
+                arbeitsschritt.save();
+            }
+
+
+
+           /* if(anmProperties){
                 var arbeitsschritt = companyhome.createNode(opBericht.name + "_Schrittnummer_" + anhang,"mu:Arbeitsschritt",anmProperties);
             }else{
                 var arbeitsschritt = companyhome.createNode(opBericht.name + "_Schrittnummer_" + anhang,"mu:Arbeitsschritt");
             }
             if(img){
-                arbeitsschritt.createAssociation(img,"sys:base");
-            }
+               // arbeitsschritt.createAssociation(img,"sys:base");
+            }*/
             opBericht.createAssociation(arbeitsschritt,"mu:Anhang");
         }
      }
