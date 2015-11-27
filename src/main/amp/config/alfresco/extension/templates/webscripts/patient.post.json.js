@@ -44,13 +44,11 @@ if (json.has("patientenVorname") && json.has("patientenNachname") && json.has("p
     if (json.has("patientenAnmerkungen"))
         properties['mu:patientenAnmerkungen'] =  json.get("patientenAnmerkungen");
 
-    status.status = json.get("patientenSVNR");
 
     var patient = companyhome.createNode(json.get("patientenSVNR"), contentType, properties);
 
     if(patient)
         status.status = "ok";
-
 }
 
 model.status = jsonUtils.toJSONString(status);
