@@ -1,8 +1,0 @@
-<webscript>
-    <shortname>file upload</shortname>
-    <family>Tutorials</family>
-    <description>Uploaded ein File</description>
-    <url>/api/fileUpload</url>
-    <format default="json">extension</format>
-    <authentication>user</authentication>
-</webscript>
