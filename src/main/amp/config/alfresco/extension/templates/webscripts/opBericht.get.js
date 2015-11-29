@@ -51,7 +51,7 @@ for(bericht in opBerichte){
     //anhaenge
     var anhaenge = new Array();
 
-    var findAnhaenge = opBerichte[bericht].childAssocs["mu:Anhang"];
+    var findAnhaenge = opBerichte[bericht].assocs["mu:Anhang"];
 
     if(findAnhaenge)
     for(var j = 0; j < findAnhaenge.length; j++){

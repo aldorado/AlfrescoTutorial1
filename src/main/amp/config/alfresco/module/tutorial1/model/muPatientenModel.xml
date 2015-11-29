@@ -239,7 +239,7 @@
                     </target>
                 </association>
 
-                <child-association name="mu:Anhang">
+                <association name="mu:Anhang">
                     <title>Anhang</title>
                     <source>
                         <mandatory>false</mandatory>
@@ -250,7 +250,7 @@
                         <mandatory>false</mandatory>
                         <many>true</many>
                     </target>
-                </child-association>
+                </association>
             </associations>
 
         </type>
