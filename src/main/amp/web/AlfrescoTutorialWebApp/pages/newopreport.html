@@ -1,0 +1,43 @@
+<div class="container">
+    <h2>Neuer OP-Bericht</h2>
+    <form class="form-vertical" ng-submit="nopc.submitNewOpReport()">
+        <div class="form-group">
+            <label>Datum</label>
+            <input class="form-control" type="date" ng-model="nopc.opReport.opDatum" min="1850-01-01" max="2500-01-01" required>
+        </div>
+        <div class="form-group">
+            <label>Patient</label>
+            <select class="form-control"
+                    ng-options="patient.patientenSVNR as patient.patientenSVNR for patient in nopc.patientList"
+                    ng-model="nopc.opReport.patientenSVNR" required>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Beteiligte Ärzte</label>
+            <select class="form-control"
+                    ng-options="doc.id as doc.arztNachname for doc in nopc.docList"
+                    ng-model="nopc.opReport.aerzte"
+                    multiple required>
+            </select>
+        </div>
+        <div class="form-group">
+            <div class="form-group" ng-repeat="arbeitsschritt in nopc.opReport.anhang track by $index" ng-model="nopc.opReport.anhang[$index]">
+                <h4>Arbeitsschritt {{$index + 1}}</h4>
+                <div class="form-group">
+                    <textarea class="form-control" ng-module="nopc.opReport.anhang[$index].arbeitsschrittAnmerkung"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-default" ngf-select="nopc.upload($file, $index)">Upload a file</button>
+                </div>
+            </div>
+            <i class="fa fa-plus" ng-click="nopc.addAnhang()"></i>
+            <i class="fa fa-minus" ng-show="nopc.opReport.anhang.length" ng-click="nopc.removeAnhang()"></i>
+        </div>
+
+        <button class="btn btn-success" type="submit"><i class="fa fa-plus"> </i> OP-Bericht Anlegen</button>
+
+    </form>
+
+    <div ng-bind="nopc.output"></div>
+
+</div>

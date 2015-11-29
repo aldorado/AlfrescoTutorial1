@@ -1,4 +1,4 @@
-var alfrescoApp = angular.module('alfrescoApp', ['ngRoute','ngResource','docModule','patientModule','serviceModule']);
+var alfrescoApp = angular.module('alfrescoApp', ['ngFileUpload','ngRoute','ngResource','docModule','patientModule','serviceModule','opReportModule']);
 
 alfrescoApp.config( function ($routeProvider, $locationProvider) {
 	$routeProvider
@@ -26,6 +26,11 @@ alfrescoApp.config( function ($routeProvider, $locationProvider) {
 			templateUrl : 'pages/doctorlist.html',
 			controller : 'doctorListCtrl',
 			controllerAs : 'dlc'
+		})
+		.when('/newopreport', {
+			templateUrl : 'pages/newopreport.html',
+			controller : 'newOpReportCtrl',
+			controllerAs : 'nopc'
 		})
 		.otherwise({
                 redirectTo: '/'
