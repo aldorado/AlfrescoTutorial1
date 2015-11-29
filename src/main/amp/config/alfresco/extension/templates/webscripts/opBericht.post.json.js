@@ -31,8 +31,9 @@ if (json.has("patientenSVNR") && json.has("aerzte") && json.has("opDatum")) {
 
     //mindestens ein arzt
     var arzt;
-    for(arztId in JSON.parse(json.getJSONArray("aerzte"))){
-        arzt = search.luceneSearch("@cm\\:name:\"" + arztId + "\"")[0];
+    var alleAerzte = JSON.parse(json.getJSONArray("aerzte"));
+    for(arztId in alleAerzte){
+        arzt = search.luceneSearch("@cm\\:name:\"" + alleAerzte[arztId] + "\"")[0];
         opBericht.createAssociation(arzt, "mu:Aerzte");
     }
 
