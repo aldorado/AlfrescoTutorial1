@@ -35,3 +35,20 @@ opReportModule.controller('newOpReportCtrl', function (PatientAPI, ArztAPI, OpRe
     };
 
 });
+
+opReportModule.controller('opReportListCtrl', function (OpReportAPI) {
+    var self = this;
+
+    self.opReportList = OpReportAPI.query(function () {
+        for (report in self.opReportList)
+            if(self.opReportList[report].opDatum)
+                self.opReportList[report].opDatum = self.opReportList[report].opDatum.date
+                                            + "." + self.opReportList[report].opDatum.month
+                                            + "." + (self.opReportList[report].opDatum.year + 1900);
+    });
+
+    self.deleteReport = function (index) {
+        self.opReportList[index].$delete();
+        self.opReportList.splice(index, 1);
+    }
+});
