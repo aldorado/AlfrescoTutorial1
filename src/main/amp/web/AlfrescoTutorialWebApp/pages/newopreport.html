@@ -24,7 +24,7 @@
             <div class="form-group" ng-repeat="arbeitsschritt in nopc.opReport.anhang track by $index" ng-model="nopc.opReport.anhang[$index]">
                 <h4>Arbeitsschritt {{$index + 1}}</h4>
                 <div class="form-group">
-                    <textarea class="form-control" ng-module="nopc.opReport.anhang[$index].arbeitsschrittAnmerkung"></textarea>
+                    <textarea class="form-control" ng-model="nopc.opReport.anhang[$index].arbeitsschrittAnmerkung"></textarea>
                 </div>
                 <div class="form-group">
                     <button type="button" class="btn btn-default" ngf-select="nopc.upload($file, $index)">Upload a file</button>
