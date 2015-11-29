@@ -32,7 +32,7 @@ if (json.has("patientenSVNR") && json.has("aerzte") && json.has("opDatum")) {
 
 
      //optionale anhaenge
-     if(json.has("Anhang")){
+     if(json.has("anhang")){
         var anhaenge = JSON.parse(json.getJSONArray("anhang"));
         for(anhang in anhaenge){
 
@@ -46,7 +46,7 @@ if (json.has("patientenSVNR") && json.has("aerzte") && json.has("opDatum")) {
             }
 
             if(anhaenge[anhang].hasOwnProperty("arbeitsschrittAnmerkung")){
-                status.ausgabe = anhaenge[anhang].ArbeitsschrittAnmerkung;
+                status.ausgabe = anhaenge[anhang].arbeitsschrittAnmerkung;
                 arbeitsschritt.properties["mu:ArbeitsschrittAnmerkung"] = anhaenge[anhang].arbeitsschrittAnmerkung;
                 arbeitsschritt.save();
             }
