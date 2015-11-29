@@ -57,18 +57,16 @@ for(bericht in opBerichte){
     for(var j = 0; j < findAnhaenge.length; j++){
         var anhang = {};
 
-        anhang.ArbeitsschrittAnmerkung = findAnhaenge[j].properties["mu:ArbeitsschrittAnmerkung"];
-        //if(findAnhaenge[j].assocs["mu:ArbeitsschrittAnhang"]){
+        anhang.arbeitsschrittAnmerkung = findAnhaenge[j].properties["mu:ArbeitsschrittAnmerkung"];
         if(findAnhaenge[j].content != ""){
-            anhang.url = findAnhaenge[j].webdavUrl;
+            anhang.url = url.context + findAnhaenge[j].webdavUrl;
         }
         anhaenge.push(anhang);
-       // anhaenge.push(findAnhaenge[j].properties);
     }
 
-    opBericht.Patient = patient;
-    opBericht.Aerzte = aerzte;
-    opBericht.Anhang = anhaenge;
+    opBericht.patient = patient;
+    opBericht.aerzte = aerzte;
+    opBericht.anhang = anhaenge;
 
     output.push(opBericht);
 }

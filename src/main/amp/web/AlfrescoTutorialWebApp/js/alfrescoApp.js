@@ -32,6 +32,11 @@ alfrescoApp.config( function ($routeProvider, $locationProvider) {
 			controller : 'newOpReportCtrl',
 			controllerAs : 'nopc'
 		})
+		.when('/opreportlist', {
+			templateUrl : 'pages/opreportlist.html',
+			controller : 'opReportListCtrl',
+			controllerAs : 'oplc'
+		})
 		.otherwise({
                 redirectTo: '/'
         });

@@ -1,0 +1,58 @@
+<div class="container">
+    <h2>OP-Berichte</h2>
+    <div class="op-bericht" ng-repeat="report in oplc.opReportList">
+        <table class="table">
+            <tr>
+                <td class="theader">Datum</td>
+                <td ng-bind="report.opDatum"></td>
+                <td></td>
+                <td><button class="btn btn-danger pull-right" ng-click="oplc.deleteReport($index)"><i class="fa fa-remove"> </i></button></td>
+            </tr>
+
+            <tr class="theader">
+                <td>Patienten SVNR</td>
+                <td>Vorname</td>
+                <td>Nachname</td>
+                <td>Geschlecht</td>
+            </tr>
+
+            <tr>
+                <td ng-bind="report.patient.patientenSVNR"></td>
+                <td ng-bind="report.patient.patientenVorname"></td>
+                <td ng-bind="report.patient.patientenNachname"></td>
+                <td ng-bind="report.patient.patientenGeschlecht"></td>
+            </tr>
+
+            <tr class="theader">
+                <td>Arzt Id</td>
+                <td>Arzt Vorname</td>
+                <td>Arzt Nachname</td>
+                <td>Arzt Fachbereich</td>
+            </tr>
+
+            <tr ng-repeat="doc in report.aerzte">
+                <td ng-bind="doc.id"></td>
+                <td ng-bind="doc.arztVorname"></td>
+                <td ng-bind="doc.arztNachname"></td>
+                <td>
+                    <ul class="fachbereichListe">
+                        <li ng-repeat="fachbereich in doc.arztFachbereich" ng-bind="fachbereich"></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+
+        <h4>Arbeitsschritte</h4>
+       <div ng-repeat="anhang in report.anhang">
+            <div class="row arbeitsschritt">
+                <div class="col-md-12">{{$index + 1}}.</div>
+            </div>
+            <div class="row">
+                <div class="col-md-6"><img class="img-responsive" ng-src="{{anhang.url}}"></div>
+                <div class="col-md-6" ng-bind="anhang.arbeitsschrittAnmerkung"></div>
+            </div>
+       </div>
+
+    </div>
+</div>

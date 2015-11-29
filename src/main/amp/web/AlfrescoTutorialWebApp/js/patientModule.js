@@ -20,7 +20,6 @@ patientModule.controller('newPatientCtrl', function (PatientAPI) {
 
 patientModule.controller('patientListCtrl', function (PatientAPI) {
 	var self = this;
-	self.test = "Patientenliste";
 	self.patientList = PatientAPI.query();
 
 	self.deletePatient = function (index) {

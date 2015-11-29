@@ -17,7 +17,12 @@ if (json.has("arztVorname") && json.has("arztNachname")) {
     if (json.has("arztFachbereich"))
         properties['mu:arztFachbereich'] =  JSON.parse(json.getJSONArray("arztFachbereich"));
 
-    var arzt = companyhome.createNode(aerzte.length, contentType, properties);
+    var id = ~~(Math.random() * 1000000);
+
+    while(search.luceneSearch("TYPE:\"mu:aerzteregisterkarte\" AND @mu\\:name:\"" + id + "\"").length > 0)
+        id = ~~(Math.random() * 1000000);
+
+    var arzt = companyhome.createNode(id, contentType, properties);
 
     if(arzt)
         status.status = "ok";
