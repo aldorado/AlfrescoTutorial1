@@ -5,7 +5,7 @@ var status = {
 };
 
 for (bericht in opBerichte){
-    opBericht[bericht].remove();
+    opBerichte[bericht].remove();
 }
 
 var arbeitschritte = search.luceneSearch("TYPE:\"mu:Arbeitsschritt\"");

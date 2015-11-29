@@ -2,7 +2,7 @@
     <shortname>Get opBericht</shortname>
     <family>Tutorials</family>
     <description>returns Content of type opBericht</description>
-    <url>/api/delete</url>
+    <url>/api/opBericht</url>
     <format default="json">extension</format>
     <authentication>user</authentication>
 </webscript>

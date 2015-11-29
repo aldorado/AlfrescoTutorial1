@@ -1,7 +1,7 @@
 <webscript>
-    <shortname>Get opBericht</shortname>
+    <shortname>Delete opBericht</shortname>
     <family>Tutorials</family>
-    <description>returns Content of type opBericht</description>
+    <description>Deletes Content of type opBericht</description>
     <url>/api/opBericht</url>
     <format default="json">extension</format>
     <authentication>user</authentication>
