@@ -12,3 +12,4 @@ serviceModule.factory('ArztAPI', function ($resource) {
 serviceModule.factory('OpReportAPI', function ($resource) {
 	return $resource('/alfresco/service/api/opBericht/:id', {id: '@id'});
 });
+
